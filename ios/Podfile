@@ -40,6 +40,8 @@ target 'modulo06' do
 
   pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
 
+  pod 'react-native-webview', :path => '../node_modules/react-native-webview'
+
   target 'modulo06Tests' do
     inherit! :search_paths
     # Pods for testing

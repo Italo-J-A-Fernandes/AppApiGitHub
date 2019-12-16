@@ -52,7 +52,7 @@ export default class User extends Component {
     });
   }
 
-  loadRepositories = async () => {
+  loadMore = async () => {
     const { loadingRepo, stars } = this.state;
     const { navigation } = this.props;
     const user = navigation.getParam('user');
@@ -82,6 +82,12 @@ export default class User extends Component {
     );
   };
 
+  handleNavigate = repository => {
+    const { navigation } = this.props;
+
+    navigation.navigate('StarRepo', { repository });
+  };
+
   render() {
     const { navigation } = this.props;
     const { stars, loading } = this.state;
@@ -105,11 +111,11 @@ export default class User extends Component {
           <Stars
             data={stars}
             keyExtractor={star => String(star.id)}
-            onEndReached={this.loadRepositories}
+            onEndReached={this.loadMore}
             onEndReachedThreshold={0.2}
             ListFooterComponent={this.renderFooter}
             renderItem={({ item }) => (
-              <Starred>
+              <Starred onPress={() => this.handleNavigate(item)}>
                 <OwnerAvatar source={{ uri: item.owner.avatar_url }} />
                 <Info>
                   <Title>{item.name}</Title>
