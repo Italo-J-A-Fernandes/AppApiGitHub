@@ -4,6 +4,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import Main from './pages/Main';
 import User from './pages/User';
 import StarRepo from './pages/StarRepo';
+import Tabs from './pages/Tabs';
 
 const Routes = createAppContainer(
   createStackNavigator(
@@ -11,6 +12,7 @@ const Routes = createAppContainer(
       Main,
       User,
       StarRepo,
+      Tabs,
     },
     {
       headerLayoutPreset: 'center',

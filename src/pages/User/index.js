@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ActivityIndicator } from 'react-native';
+import { ActivityIndicator, Button } from 'react-native';
 import PropTypes from 'prop-types';
 import api from '../../services/api';
 
@@ -36,6 +36,11 @@ export default class User extends Component {
     page: 2,
     loading: false,
     loadingRepo: false,
+    index: 0,
+    routes: [
+      { key: 'first', title: 'First' },
+      { key: 'second', title: 'Second' },
+    ],
   };
 
   async componentDidMount() {
@@ -88,6 +93,11 @@ export default class User extends Component {
     navigation.navigate('StarRepo', { repository });
   };
 
+  tabs = () => {
+    const { navigation } = this.props;
+    navigation.navigate('Tabs');
+  };
+
   render() {
     const { navigation } = this.props;
     const { stars, loading } = this.state;
@@ -100,6 +110,7 @@ export default class User extends Component {
           <Avatar source={{ uri: user.avatar }} />
           <Name>{user.name}</Name>
           <Bio>{user.bio}</Bio>
+          <Button title="My Repo's" onPress={() => this.tabs()} />
         </Header>
 
         {loading ? (
