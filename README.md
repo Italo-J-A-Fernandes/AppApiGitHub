@@ -7,6 +7,8 @@ Primeiro APP utilizando a tecnologia ReactNative, estudo do curso Rocketseat Boo
 | -------------  | --- |
 | :sparkles: Nome | **Curso de React: gerenciamento de estados globais com ContextAPI**
 | :label: Tecnologias | react, styled-components, javascript, html, css
+| 🔖 Status Curso | Finalizado
+| 📖 Status Pessoal | Parado
 
 ## Detalhes do projeto
 
